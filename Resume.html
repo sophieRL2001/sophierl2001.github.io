@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophia Lind - Resume</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Using Lato for body and Merriweather for headings - think they look good together -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- font awesome icons for contact stuff (phone, email etc) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* --- General Styles & Color Variables --- */
+        :root {
+            --primary-color: #0056b3; /* standard blue, looks profesional */
+            --text-color: #212529; /* dark grey for text */
+            --light-text-color: #495057; /* lighter grey for secondary info */
+            --border-color: #ced4da; /* light grey for borders */
+            --heading-font: 'Merriweather', serif;
+            --body-font: 'Lato', sans-serif;
+        }
+
+        body {
+            font-family: var(--body-font);
+            line-height: 1.5; /* standard line spacing */
+            margin: 0 auto;
+            padding: 25px; /* space around the edges */
+            max-width: 850px; /* standard page width */
+            background-color: #ffffff; /* plain white bg */
+            color: var(--text-color);
+            font-size: 10.5pt; /* standard resume font size */
+        }
+
+        /* --- Main Content Area (just using body since background is white) --- */
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1.5px solid var(--text-color); /* solid border under header */
+        }
+
+        header h1 {
+            font-family: var(--heading-font);
+            margin: 0 0 5px 0;
+            color: var(--text-color);
+            font-size: 22pt; /* make name big and clear */
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header .contact-info {
+            font-size: 10pt;
+            color: var(--text-color);
+        }
+        header .contact-info span { /* spans to keep contact info on one line */
+            margin: 0 8px; /* Space out contact items */
+            white-space: nowrap; /* stop contact info wrapping */
+        }
+         header .contact-info i {
+            margin-right: 4px;
+            color: var(--text-color); /* keep icons subtle, match text color */
+         }
+         header .links { /* links like github/linkedin */
+             margin-top: 8px;
+             font-size: 9.5pt;
+         }
+         header .links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 6px;
+            font-weight: 700;
+         }
+         header .links a:hover {
+            text-decoration: underline;
+         }
+
+
+        /* --- Section Styling --- */
+        section {
+            margin-bottom: 18px; /* Space between sections */
+        }
+
+        h2 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 13pt; /* section headings - clear but not massive */
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 4px;
+            text-transform: uppercase; /* uppercase headings, common resume thing */
+        }
+
+        /* --- Styling for Job/Project/Degree Lines --- */
+        .title-line {
+            display: flex;
+            justify-content: space-between; /* push title and date apart */
+            align-items: baseline; /* align text baselines */
+            margin-bottom: 2px;
+        }
+
+        .title-line h3 { /* job title, degree, etc */
+            font-family: var(--body-font);
+            font-size: 11pt;
+            color: var(--text-color);
+            font-weight: 700; /* bold */
+            margin: 0; /* remove default h3 margin */
+        }
+
+        .title-line span.date { /* dates */
+            font-family: var(--body-font);
+            font-size: 10.5pt;
+            font-weight: 700; /* bold dates too */
+            color: var(--text-color);
+            white-space: nowrap; /* prevent date wrapping */
+            margin-left: 15px; /* space before date */
+        }
+
+        /* --- Styling for Company/University/Etc --- */
+        h4 { /* company, university name */
+            margin: 0 0 8px 0; /* space below this line */
+            font-size: 10.5pt;
+            font-weight: 400; /* regular weight */
+            color: var(--light-text-color);
+            font-style: italic; /* italic for secondary info */
+        }
+
+
+        /* --- List Styling --- */
+        ul {
+            list-style: none;
+            padding-left: 15px; /* indent bullets */
+            margin: 5px 0 10px 0; /* compact list margins */
+        }
+
+        li {
+            margin-bottom: 5px; /* space between list items */
+            padding-left: 15px;
+            position: relative;
+            line-height: 1.45; /* adjust line height for bullets */
+        }
+
+        /* actual bullet style */
+        li::before {
+            content: '•';
+            color: var(--text-color);
+            font-size: 1.1em; /* slightly bigger bullet */
+            position: absolute;
+            left: 0px;
+            top: -1px; /* fine-tune vertical alignment */
+        }
+
+
+        /* --- Skills Section Specific Styling --- */
+        #skills ul {
+            padding-left: 0; /* remove indent for skills list */
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        #skills li {
+            display: inline; /* display skills inline */
+            padding: 0; /* no padding needed */
+            margin: 0;
+            font-size: 10.5pt;
+            line-height: 1.6; /* ensure spacing for inline items */
+        }
+        #skills li::before {
+            content: none; /* no bullets for skills */
+        }
+        /* separator between skills */
+        #skills li:not(:last-child)::after {
+            content: ' | '; /* like a pipe | */
+            color: var(--light-text-color);
+            margin: 0 4px;
+        }
+
+        #skills strong { /* category names like 'Technical' */
+             display: block; /* category names on own line */
+             margin-top: 10px;
+             margin-bottom: 4px;
+             font-weight: 700;
+             color: var(--text-color);
+             font-size: 10.5pt;
+        }
+        #skills p:first-of-type strong {
+            margin-top: 0; /* no top margin on the first one */
+        }
+
+
+        /* --- Education Section Specific Styling --- */
+        #education p {
+            margin: 2px 0 5px 0;
+            padding-left: 0; /* no extra indent */
+            font-size: 10.5pt;
+        }
+        #education strong {
+            font-weight: 700; /* bold labels like GPA */
+        }
+
+        /* --- General Link Styling --- */
+        a {
+            color: var(--primary-color);
+            text-decoration: none; /* no underline on links by default */
+            font-weight: 700;
+        }
+        a:hover {
+            text-decoration: underline; /* underline on hover */
+        }
+
+        /* --- style for the 'Skills Used' text --- */
+        em {
+            color: var(--light-text-color);
+            font-style: italic;
+            font-size: 10pt; /* bit smaller */
+            display: block; /* display block */
+            margin-top: 3px; /* space above */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- no wrapper div needed, just using body -->
+    <header>
+        <h1>Sophia Lind</h1>
+        <div class="contact-info">
+             <span><i class="fas fa-map-marker-alt"></i> Newbury, MA</span>
+             <span><i class="fas fa-phone"></i> 978-494-3972</span>
+             <span><i class="fas fa-envelope"></i> sophielind3@gmail.com</span>
+        </div>
+        <div class="links">
+             <a href="https://github.com/sophieRL2001" target="_blank">github.com/sophieRL2001</a>
+
+        </div>
+    </header>
+
+    <section id="summary">
+        <h2>Summary</h2>
+        <p>
+            Detail-oriented Informatics graduate (Expected Summer 2025) with a Business minor, seeking an entry-level Data Analyst, Business Analyst, or Database Assistant role. Strong foundation in data analysis (R, Python, SQL), database concepts, and various programming languages. Proven reliability and teamwork skills developed over 7+ years in a customer-facing role. Interested in applying skills within sectors such as technology, finance, or retail. Eager to apply technical skills and analytical thinking to contribute to data-driven solutions within a dynamic organization.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <p>
+            <strong>Technical:</strong>
+            <ul>
+                <li>Python</li><li>SQL</li><li>Java</li><li>R</li><li>Data Analysis</li><li>Database Management</li><li>Pandas</li><li>NumPy</li><li>SciPy</li><li>Matplotlib</li><li>RStudio</li><li>Jupyter Notebooks</li><li>PostgreSQL</li><li>Excel</li><li>Git/GitHub</li><li>HTML/CSS</li><li>JavaScript</li><li>C/C++</li><li>ArcGIS</li>
+            </ul>
+        </p>
+        <p>
+            <strong>Soft Skills:</strong>
+            <ul>
+                <li>Teamwork & Collaboration</li><li>Customer Service</li><li>Reliability & Work Ethic</li><li>Adaptability</li><li>Problem-Solving</li><li>Communication</li><li>Time Management</li>
+            </ul>
+        </p>
+         <p>
+            <strong>Business Acumen:</strong>
+            <ul>
+                <li>Business Process Awareness</li><li>Financial Principles</li><li>Management Principles</li><li>Marketing Fundamentals</li><li>Operations Management</li>
+            </ul>
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div>
+            <div class="title-line">
+                <h3>Exoplanet Habitability Analysis</h3>
+                <span class="date">Fall 2024</span>
+            </div>
+            <h4>INFO 348 Course Project</h4>
+            <ul>
+                <li>Analyzed NASA exoplanet dataset using RStudio to identify planets with high potential for harboring life based on established parameters.</li>
+                <li>Performed data cleaning, statistical analysis, and interpretation of complex astronomical data.</li>
+                <li>Generated visualizations to communicate findings on potential exoplanet habitability factors.</li>
+                <li><em>Skills Used: R, RStudio, Data Cleaning, Statistical Analysis, Data Visualization (ggplot2), dplyr.</em></li>
+            </ul>
+        </div>
+        <div style="margin-top: 15px;"> <!-- little space between projects -->
+             <div class="title-line">
+                <h3>Chess Game Analysis by Skill Level</h3>
+                 <span class="date">Fall 2024</span>
+            </div>
+            <h4>CS 119 Course Project</h4>
+            <ul>
+                <li>Analyzed a large dataset (3.7M+ games) from Lichess.org using Python and Pandas to identify patterns in chess play across different Elo rating brackets.</li>
+                <li>Calculated and visualized key metrics such as game accuracy, error rates (blunders, mistakes, inaccuracies), game length, and opening choices relative to player skill level.</li>
+                <li>Leveraged Matplotlib for data visualization to illustrate trends in game stability, complexity, and strategic choices as player ratings increase.</li>
+                <li><em>Skills Used: Python, Pandas, NumPy, Matplotlib, Data Analysis, Data Visualization, Statistical Interpretation.</em></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div>
+            <div class="title-line">
+                <h3>Market Basket</h3>
+                <span class="date">August 2017 – Present</span>
+            </div>
+            <h4>Grocer | Newbury, MA</h4>
+            <ul>
+                <li>Collaborated effectively within a team of 5-10 colleagues per shift to ensure efficient store operations, including stocking and maintaining store standards.</li>
+                <li>Provided helpful and efficient customer service in a fast-paced retail environment.</li>
+                <li>Operated Point-of-Sale (POS) systems efficiently and accurately.</li>
+                <li>Demonstrated exceptional reliability, punctuality, and strong work ethic through consistent performance over 7+ years of employment.</li>
+                <li>Adapted to varying daily tasks and operational needs within the grocery environment.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div>
+             <div class="title-line">
+                 <h3>University of Massachusetts Amherst</h3>
+                 <span class="date">Expected Graduation: Summer 2025</span>
+            </div>
+            <h4>Bachelor of Science in Informatics | Amherst, MA</h4>
+            <p><strong>Minor:</strong> Business Administration</p>
+            <!-- note: usually just put Overall GPA, but keeping Major too for now -->
+            <p><strong>Major GPA:</strong> 3.66 | <strong>Overall GPA:</strong> 3.38</p>
+            <p><strong>Honors:</strong> Dean's List (Fall 2019, Spring 2024, Fall 2024)</p>
+            <p><strong>Relevant Coursework:</strong> Data Analytics with Python (INFO 348), Pract & Appl of Data Management (COMPSCI 345), Intro to Data Science (INFO 248), Mathmtcl Fndtn for Informatics (INFO 150), Statistics I (STATISTC 515), Using Data Structures (COMPSCI 186), Programming w/Data Structures (COMPSCI 187), Corporation Finance (FINANCE 301), Principles of Management (MANAGMNT 301)</p>
+        </div>
+    </section>
+
+</body>
+</html>
